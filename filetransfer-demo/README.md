@@ -12,7 +12,9 @@ The source is a directory containing sub directories and files. The client reads
 <h2>In order to run this application</h2>
 
 
-1. Alter the root directory property in <i>src/main/resources/application.properties</i> (in module <i>filetransfer-demo-server</i>) to where you want the directories and files to be copied to (i.e. the root directory).
-2. Start the Socket server by running <i>com.filetransfer.transfer.DirectoryReceiver.main(with no args)</i> in the <i>filetransfer-demo-server module</i>.
-3. Start the Socket server by running <i>com.filetransfer.transfer.FileRequestReceiver.main(with no args)</i> in the <i>filetransfer-demo-client</i> module.
-4. Call the main method <i>com.filetransfer.FileTransferClient</i> on the with an argument representing the root directory that you want processed. (Alternatively, you can call the following Unit test that will process its own set of files and directories. See <i>DirectoryReaderTest.java</i> in the <i>filetransfer-demo-client module</i>).
+1. Alter the <i>root directory</i> property in <i>src/main/resources/<b>application.properties</b></i> (in module <i>filetransfer-demo-server</i>) to where you want the directories and files to be copied to.
+* Start the following Socket servers by running:
+    * <i>com.filetransfer.transfer.<b>DirectoryReceiver</b>.main(with no args)</i> in the <i>filetransfer-demo-server module</i>.
+    * <i>com.filetransfer.transfer.<b>FileRequestReceiver</b>.main(with no args)</i> in the <i>filetransfer-demo-client</i> module.
+* Call the main method on <i>com.filetransfer.<b>FileTransferClient</b></i>, with an argument representing the root directory that you want processed. 
+    * Alternatively, you can call the following Unit test that will process its own set of files and directories. See <i><b>DirectoryReaderTest</b>.java</i> in the <i>filetransfer-demo-client module</i>.
