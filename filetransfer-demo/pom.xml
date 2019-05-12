@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.filetransfer</groupId>
+  <artifactId>filetransfer-demo</artifactId>
+  <packaging>pom</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  	<modules>
+  		<module>filetransfer-demo-commons</module>
+  		<module>filetransfer-demo-client</module>
+  		<module>filetransfer-demo-server</module>
+  	</modules>
+  
+	<properties>
+	    <java.version>11</java.version>
+	    <maven.compiler.target>${java.version}</maven.compiler.target>
+    	<maven.compiler.source>${java.version}</maven.compiler.source>
+    	<maven.compiler.release>${java.version}</maven.compiler.release>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>4.12</version>
+		    <scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>
