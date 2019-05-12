@@ -1,5 +1,7 @@
 <h2>Description</h2>
 
+File transfer demo - uses java sockets to copy files from one location to another.
+
 The source is a directory containing sub directories and files. The client reads from the source and transfers sub directories and files to the server which writes out to the destination. This implementation requires the use of sockets.
 
 <h2>Notes</h2>
