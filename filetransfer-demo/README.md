@@ -13,8 +13,8 @@ The source is a directory containing sub directories and files. The client reads
 
 
 1. Alter the <i>root directory</i> property in <i>src/main/resources/<b>application.properties</b></i> (in module <i>filetransfer-demo-server</i>) to where you want the directories and files to be copied to.
-* Start the following Socket servers by running:
+2. Start the following Socket servers by running:
     * <i>com.filetransfer.transfer.<b>DirectoryReceiver</b>.main(with no args)</i> in the <i>filetransfer-demo-server module</i>.
     * <i>com.filetransfer.transfer.<b>FileRequestReceiver</b>.main(with no args)</i> in the <i>filetransfer-demo-client</i> module.
-* Call the main method on <i>com.filetransfer.<b>FileTransferClient</b></i>, with an argument representing the root directory that you want processed. 
+3. Call the main method on <i>com.filetransfer.<b>FileTransferClient</b></i>, with an argument representing the root directory that you want processed. 
     * Alternatively, you can call the following Unit test that will process its own set of files and directories. See <i><b>DirectoryReaderTest</b>.java</i> in the <i>filetransfer-demo-client module</i>.
