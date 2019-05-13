@@ -7,10 +7,9 @@ import java.util.logging.Logger;
 
 import com.filetransfer.filesystem.DirectoryReader;
 import com.filetransfer.transfer.DirectorySender;
-import com.filetransfer.transfer.FileRequestReceiver;
 
 /**
- * This can be used to access the appliction. You can call the main method with 
+ * This can be used to access the application. You can call the main method with 
  * a parameter indicating the root of the directory you would like to process.
  * 
  * This will then copy the directory and files to the corresponding root directory 
@@ -23,10 +22,15 @@ public class FileTransferClient {
 	final static Logger logger = Logger.getLogger(DirectoryReader.class.getName());
 
 	public static void main(String[] args) {
-    	//new FileRequestReceiver().receiveFiles();
-    	Map<String,List<String>> nodes = DirectoryReader.getNodes(args[0]);
+		if (args.length != 1) {
+			logger.log(Level.SEVERE, "FileTransferClient needs to be called with one argument contaiing the root directory.");
+			return;
+		}
+		String rootDirectory = args[0];
+		logger.log(Level.INFO, "Progessing files from root directory: "+rootDirectory);
+    	Map<String,List<String>> nodes = DirectoryReader.getNodes(rootDirectory);
 		boolean success = DirectorySender.sendObject(nodes);
-		logger.log(Level.INFO, "success: "+success);
+		logger.log(Level.INFO, "Success: "+success);
 	}
 
 }

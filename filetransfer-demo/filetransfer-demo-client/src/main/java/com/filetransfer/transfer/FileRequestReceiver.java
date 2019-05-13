@@ -9,6 +9,8 @@ import java.util.logging.Logger;
 /**
  * Used to create a simple TCP/IP socket in order to send an object to a server.
  * 
+ * Needs to be run to listen for an incoming object.
+ * 
  * @author richardmarais
  *
  */

@@ -22,18 +22,16 @@ import com.filetransfer.util.Utils;
  */
 public class FileRequester extends FileTransfer {
 
-	final static Logger logger = Logger.getLogger(FileRequester.class.getName());
-    private Socket socket;
+	private final static Logger logger = Logger.getLogger(FileRequester.class.getName());
 
 	/**
 	 * Used to make a request for a file.
 	 * 
 	 * @param fileName
 	 */
-	public void getFile(String fileName) {
+	public static void getFile(String fileName) {
 		try (Socket socket = new Socket(hostname, file_port)) {
-			this.socket = socket;
-			processFile(fileName);
+			processFile(socket, fileName);
 			socket.close();
 		} catch (UnknownHostException ex) {
 			logger.log(Level.SEVERE, "Server not found (" + hostname + ":" + file_port + ").", ex);
@@ -47,7 +45,7 @@ public class FileRequester extends FileTransfer {
 	 * 
 	 * @param fileName
 	 */
-	public void processFile(String fileName) {
+	public static void processFile(Socket socket, String fileName) {
 		OutputStream os = null;
 		InputStream is = null;
 		OutputStream fos = null;

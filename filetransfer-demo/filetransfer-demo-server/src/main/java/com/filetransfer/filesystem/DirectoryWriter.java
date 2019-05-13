@@ -58,7 +58,10 @@ public class DirectoryWriter {
 	 * @param fileName
 	 */
 	private static void getAndCreateFile(String fileName) {
-		new FileRequester().getFile(fileName);
+		Thread t = new Thread(() -> {
+			FileRequester.getFile(fileName);
+	    });
+		t.start();
 	}
 
 }
